@@ -15,11 +15,6 @@ h3k4me1_peaks <- read.table("../data/SuppFig2/Delaneau_H3K4me1.ATAC.bed")
 h3k4me3_peaks <- read.table("../data/SuppFig2/Delaneau_H3K4me3.ATAC.bed")
 
 
-
-#ggplot(onlyatac_peaks) + geom_histogram(aes(x=V3-V2), bins = 20) + theme_classic() + xlim(c(0,2000))
-#ggplot(h3k27ac_peaks) + geom_histogram(aes(x=V3-V2), bins = 20) + theme_classic() + xlim(c(0,2000))
-
-
 onlyatac_peaks$Group <- "OnlyATAC"
 h3k27ac_peaks$Group <- "H3K27ac"
 h3k4me1_peaks$Group <- "H3K4me1"
@@ -45,8 +40,8 @@ p_S2A <- all_peaks_size %>% filter(V3-V2 < 10000) %>% ggplot(aes(x=Group, y=V3-V
   )
 
 
-### tss window
-histone_peakset_tsswindow <- read.table('~/Library/CloudStorage/GoogleDrive-rjeong@g.harvard.edu/My Drive/Manuscript/IMD_colocalization/draft/data/Fig1/supp/histone_peakset_tsswindow.txt', header = T)
+### Proportion of variants in tss window
+histone_peakset_tsswindow <- read.table('../data/SuppFig2/histone_peakset_tsswindow.txt', header = T)
 
 
 p_S2B <- histone_peakset_tsswindow %>% mutate(tss_window = factor(tss_window, levels=c("10kb", "25kb", "50kb", "100kb", "250kb", "500kb"))) %>%
@@ -54,7 +49,7 @@ p_S2B <- histone_peakset_tsswindow %>% mutate(tss_window = factor(tss_window, le
   geom_col( aes(y=num_peaks / Total, alpha=tss_window), color ='black', position = "dodge", fill='#89B2F5') +
   geom_hline(yintercept = 1, color='white') + geom_hline(yintercept = 1, linetype=2) +
   scale_alpha_manual(name="TSS window",
-                     labels = c("10kb   (14.5%)", "25kb   (24.7%)", "50kb   (36.7%)", "100kb (51.5%)", "250kb (71.0%)", "500kb (82.8%)"),
+                     labels = c("10 kb   (14.5%)", "25 kb   (24.7%)", "50 kb   (36.7%)", "100 kb (51.5%)", "250 kb (71.0%)", "500 kb (82.8%)"),
                      values = c(0.5,0.6,0.7,0.8,0.9,1)) +
   scale_y_continuous(breaks = c(0,0.25,0.5,0.75, 1), expand = expansion(mult = c(0, 0.02))) +
   labs(x="Peak set", y="Proportion of ATAC peaks") +
@@ -66,10 +61,8 @@ p_S2B <- histone_peakset_tsswindow %>% mutate(tss_window = factor(tss_window, le
 
 p_S2 <- p_S2A + plot_spacer() + p_S2B + plot_layout(ncol=3, widths = c(7,1,7))
 
-#p_S1 <- p_S1A / (p_S2B + plot_spacer() + p_S2C + plot_layout(ncol=3, widths = c(7,1,7))) + plot_layout(heights = c(4,5), guides = 'keep')
 
-
-ggsave('~/Library/CloudStorage/GoogleDrive-rjeong@g.harvard.edu/My Drive/Manuscript/IMD_colocalization/draft/figures/FigureS2AB.pdf', 
+ggsave('../figures/SuppFig2/SuppFigure2AB.pdf', 
        plot = p_S2, 
        width=300, height=120, units="mm")
 
