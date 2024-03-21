@@ -1,0 +1,21 @@
+GO_biological_processes	pvalue
+immune system process	2.07713E-15
+immune response	3.30420E-14
+regulation of immune system process	6.82912E-12
+regulation of cytokine production	2.68406E-11
+response to stress	1.08525E-10
+defense response	3.11173E-10
+positive regulation of immune system process	4.09930E-09
+intracellular signal transduction	5.52704E-09
+positive regulation of response to stimulus	2.67831E-08
+lymphocyte activation	3.58624E-08
+CD4-positive, alpha-beta T cell activation	8.92737E-08
+regulation of immune response	1.31071E-07
+ERK1 and ERK2 cascade	1.63435E-07
+positive regulation of multicellular organismal process	1.88462E-07
+cell activation	2.50555E-07
+innate immune response	2.83675E-07
+regulation of hemopoiesis	3.47155E-07
+immune system development	4.06157E-07
+positive regulation of defense response	4.19951E-07
+regulation of cell activation	4.80805E-07
