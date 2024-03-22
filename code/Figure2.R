@@ -73,18 +73,18 @@ ggsave('../figures/Fig2/Figure2C.pdf',
        width=180, height=100, units="mm")
 
 
+#### Figure 2D - ELMO1 colocalization plot
 
 chr = "7"
 start <- 37242861 
 end <- 37442861
 snp = 'rs60600003'
+population = 'EUR'
 
-txdb <- AnnotationDbi::loadDb("~/Library/CloudStorage/GoogleDrive-rjeong@g.harvard.edu/My Drive/Manuscript/IMD_colocalization/draft/data/txdb_v35_hg38.sqlite")
+txdb <- AnnotationDbi::loadDb("../data/supp/txdb_v35_hg38.sqlite")
 
 gr = GenomicRanges::GRanges(seqnames = "chr7", ranges = IRanges(start, end))
 
-
-##
 d=data.frame(x1=37340793, x2=37343675, y1=0.75, y2=1.75)
 p_elmo1 <- ggplot() + theme_classic() +
   geom_rect(data=d, aes(xmin=x1, xmax=x2, ymin=y1, ymax=y2), alpha=0.6, fill='purple') +
@@ -107,11 +107,6 @@ p_elmo1 <- ggplot() + theme_classic() +
   ) +ylab("") + xlab(paste0('chr',chr,' (Mb)'))+
   scale_x_continuous(labels=function(x){sprintf('%.2f',x/1e6)}, expand = expansion(mult = c(0, 0)), limit=c(start,end)) +
   geom_point(aes(x=37342861), y=1, shape=23, size=4, fill="purple")
-
-
-##### Start Here
-population = 'EUR'
-
 
 
 ## RA GWAS
@@ -289,8 +284,6 @@ p_2D <- p_ragwas + theme(axis.text.x = element_blank(), axis.title.x = element_b
 ggsave('../figures/Fig2/Figure2D.pdf', 
        plot = p_2D, 
        width=120, height=140, units="mm")
-
-
 
 
 
