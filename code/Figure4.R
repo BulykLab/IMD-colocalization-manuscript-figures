@@ -13,7 +13,7 @@ library(GenomicRanges)
 library(locuscomparer)
 library(data.table)
 
-source("../code/supp/locuscompare_updated.R")
+source("../code/misc/locuscompare_updated.R")
 
 ## Figure 4A - additional eQTL colocalization through meta-anaylsis
 loci_gain_meta <- read.table('../data/Fig4/meta_added_eQTL_caQTL_num.070623.test.txt', header = T)
@@ -233,7 +233,6 @@ eqtl_stat$label = ifelse(eqtl_stat$rsid == snp, snp, '')
 metal = eqtl_stat[, c('rsid', 'logp', 'chr', 'pos', 'label')]
 title = "Meta-analyzed POU3F1 eQTL"
 p_meta_eqtl <- make_locuszoom2_nolabel(metal,title,chr,color,shape,size,range=c(start, end), ylab_linebreak=FALSE)
-
 
 
 p_4C <- p_gwas + theme(axis.text.x = element_blank(), axis.title.x = element_blank(), axis.text.y = element_text(size=12), axis.title.y = element_text(size=14)) + 

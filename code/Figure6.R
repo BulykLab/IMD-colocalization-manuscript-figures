@@ -11,7 +11,7 @@ library(GenomicRanges)
 library(locuscomparer)
 library(data.table)
 
-source("../code/supp/locuscompare_updated.R")
+source("../code/misc/locuscompare_updated.R")
 
 ## Figure 6A - TNFSF15 colocalization
 
@@ -173,8 +173,6 @@ p_6A_TNFSF15 <- p_gwas + theme(axis.text.x = element_blank(), axis.title.x = ele
   scale_y_continuous(expand = expansion(mult = c(0, 0)), limit=c(0,55), breaks=c(0,20,40)) + background_grid(major = 'y') +
   p_tnfsf15 + 
   plot_layout(nrow = 5, heights = c(3, 3, 3, 3, 2))
-
-p_4C_TNFSF15
 
 
 ggsave('../figures/Fig6/Figure6A.pdf', 

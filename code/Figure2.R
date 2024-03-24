@@ -10,7 +10,7 @@ library(GenomicRanges)
 library(locuscomparer)
 library(data.table)
 
-source("../code/supp/locuscompare_updated.R")
+source("../code/misc/locuscompare_updated.R")
 
 
 #### Figure 2A - h2med of ATAC & RNA vs. ATAC vs. RNA
@@ -75,6 +75,7 @@ ggsave('../figures/Fig2/Figure2C.pdf',
 
 #### Figure 2D - ELMO1 colocalization plot
 
+# 1) genome track
 chr = "7"
 start <- 37242861 
 end <- 37442861
@@ -109,7 +110,7 @@ p_elmo1 <- ggplot() + theme_classic() +
   geom_point(aes(x=37342861), y=1, shape=23, size=4, fill="purple")
 
 
-## RA GWAS
+# 2) RA GWAS
 gwas_file = "../data/Fig2/ELMO1/ELMO1_RA_Ishigaki_2021_EUR.sumstat"
 
 gwas_stat = read.table(gwas_file, header=T, sep='\t')
@@ -136,7 +137,7 @@ title = "RA GWAS"
 p_ragwas <- make_locuszoom2(metal,title,chr,color,shape,size,range=c(start, end), ylab_linebreak=FALSE)
 
 
-# PBC GWAS
+# 3) PBC GWAS
 gwas_file = "../data/Fig2/ELMO1/ELMO1_PBC_Cordell_2021.sumstat"
 
 gwas_stat = read.table(gwas_file, header=T, sep='\t')
@@ -163,7 +164,7 @@ title = "PBC GWAS"
 p_pbcgwas <- make_locuszoom2_nolabel(metal,title,chr,color,shape,size,range=c(start, end), ylab_linebreak=FALSE)
 
 
-## MS GWAS
+# 4) MS GWAS
 gwas_file = "../data/Fig2/ELMO1/ELMO1_MS_Patsopoulos_2019.sumstat"
 
 gwas_stat = read.table(gwas_file, header=T, sep='\t')
@@ -190,7 +191,7 @@ title = "MS GWAS"
 p_msgwas <- make_locuszoom2_nolabel(metal,title,chr,color,shape,size,range=c(start, end), ylab_linebreak=FALSE)
 
 
-## caQTL
+# 5) caQTL
 gwas_atac_file = "../data/Fig2/ELMO1/ELMO1.ATAC_chr7_37340793_37343675.Kumasaka.sumstat"
 
 gwas_atac_stat = read.table(gwas_atac_file, header=T, sep='\t')
@@ -284,7 +285,6 @@ p_2D <- p_ragwas + theme(axis.text.x = element_blank(), axis.title.x = element_b
 ggsave('../figures/Fig2/Figure2D.pdf', 
        plot = p_2D, 
        width=120, height=140, units="mm")
-
 
 
 
