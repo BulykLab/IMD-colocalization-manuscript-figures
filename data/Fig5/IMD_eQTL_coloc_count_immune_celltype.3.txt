@@ -1,0 +1,37 @@
+Study	Data	Celltype	Stimulated	Sample_size	CD	IBD	MS	PBC	RA	SLE	UC
+Schmiedel	Bcell	B cell	naive	91	14	12	17	6	11	7	9
+Schmiedel	CD4Tcell_active	CD4 T cell	stimulated	89	15	10	13	7	11	5	9
+Schmiedel	CD4Tcell_naive	CD4 T cell	naive	88	12	13	14	7	16	2	7
+Schmiedel	CD8Tcell_active	CD8 T cell	stimulated	88	14	13	15	9	6	3	8
+Schmiedel	CD8Tcell_naive	CD8 T cell	naive	89	18	15	18	7	14	1	11
+Schmiedel	monocyte_CD16	Monocyte	naive	90	17	14	10	6	11	2	11
+Schmiedel	monocyte	Monocyte	naive	91	18	16	14	7	16	0	11
+Schmiedel	NKcell	NK cell	naive	90	15	16	16	13	9	1	13
+Schmiedel	Tfh_memory	CD4 T cell	naive	89	15	13	16	10	17	4	4
+Schmiedel	Th1_17_memory	CD4 T cell	naive	88	15	18	14	8	14	3	4
+Schmiedel	Th17_memory	CD4 T cell	naive	89	22	21	14	13	18	6	6
+Schmiedel	Th1_memory	CD4 T cell	naive	82	17	15	11	8	15	1	6
+Schmiedel	Th2_memory	CD4 T cell	naive	89	17	13	21	7	13	3	6
+Schmiedel	Treg_memory	CD4 T cell	naive	88	22	22	11	7	13	3	9
+Schmiedel	Treg_naive	CD4 T cell	naive	89	14	17	17	8	17	3	11
+BLUEPRINT	Tcell	CD4 T cell	naive	167	21	21	23	10	18	4	14
+BLUEPRINT	monocyte	Monocyte	naive	191	29	33	20	9	19	6	27
+BLUEPRINT	neutrophil	Neutrophil	naive	196	26	23	13	8	11	7	17
+Bossini	Treg	CD4 T cell	naive	119	22	27	11	8	15	3	16
+Alasoo	Mac_naive	Macrophage	naive	84	9	14	10	2	3	1	9
+Alasoo	Mac_IFNg	Macrophage	stimulated	84	6	6	7	3	3	0	5
+Alasoo	Mac_Sal	Macrophage	stimulated	84	6	11	10	3	7	2	7
+Alasoo	Mac_IFNg_Sal	Macrophage	stimulated	84	7	12	8	2	6	2	4
+Soskic	CD4_Memory_stim_16h	CD4 T cell	stimulated	95	4	8	10	3	5	1	3
+Soskic	CD4_Memory_stim_40h	CD4 T cell	stimulated	89	4	5	12	4	6	2	5
+Soskic	CD4_Memory_stim_5d	CD4 T cell	stimulated	90	9	14	10	5	6	2	8
+Soskic	CD4_Memory_uns_0h	CD4 T cell	naive	100	5	8	5	5	6	3	8
+Soskic	CD4_Naive_stim_16h	CD4 T cell	stimulated	99	7	9	10	4	7	3	4
+Soskic	CD4_Naive_stim_40h	CD4 T cell	stimulated	89	7	8	8	5	8	1	3
+Soskic	CD4_Naive_stim_5d	CD4 T cell	stimulated	85	7	9	10	5	7	2	6
+Soskic	CD4_Naive_uns_0h	CD4 T cell	naive	99	7	7	7	6	5	1	5
+GEUVADIS	LCL	LCL	naive	373	30	38	26	21	24	8	21
+Meta-analyzed	LCL_meta	LCL	Meta-analyzed	1128	40	46	39	25	27	12	25
+Meta-analyzed	Tcell_meta	CD4 T cell	Meta-analyzed	357	28	29	28	9	26	5	19
+Meta-analyzed	monocyte_meta	Monocyte	Meta-analyzed	282	31	35	25	11	23	5	24
+Meta-analyzed	Treg_memory_meta	CD4 T cell	Meta-analyzed	207	27	33	21	14	24	4	20
