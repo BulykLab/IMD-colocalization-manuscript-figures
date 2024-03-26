@@ -1,8 +1,6 @@
 library(ggplot2)
 
-
 legend_box = data.frame(x = 0.8, y = seq(0.8, 0.4, -0.1))
-
 
 r2_panel <- ggplot() +
   geom_rect(data = legend_box,
@@ -21,7 +19,7 @@ r2_panel <- ggplot() +
 
 
 
-ggplot2::ggsave('~/Library/CloudStorage/GoogleDrive-rjeong@g.harvard.edu/My Drive/Manuscript/IMD_colocalization/draft/figures/r2_panel.pdf',
+ggplot2::ggsave('../figures/misc/r2_panel.pdf',
                 plot = r2_panel,
                 device='pdf',
                 width=70, height=70, units="mm")
